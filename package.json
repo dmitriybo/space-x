@@ -1,0 +1,8 @@
+{
+  "name": "space-x",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/dmitriybo/space-x.git",
+  "author": "dmitriybo <bogdanov.dmitriy@bk.ru>",
+  "license": "MIT"
+}
