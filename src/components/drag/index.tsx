@@ -38,22 +38,20 @@ export const Drag: React.FC<DragProps> = ({ children, onDragEnd, disabled, curre
 	}
 
 	const startHandler = (e: any, data: any) => {
-		if (window.innerWidth > 1000) {
-			const dragCoordinates = {
-				x: data.x + data.node.getBoundingClientRect().left,
-				y: data.y + data.node.getBoundingClientRect().top,
-			}
-			draggableContext.setCoordinates(dragCoordinates)
-			setStartCoordinates(dragCoordinates)
-
-			const column: HTMLDivElement = draggableContext.columns.map(column => column.element)?.[0]
-			const columnElement: HTMLDivElement = column.querySelector('.scroll') ?? column
-			const padding = parseInt(window.getComputedStyle(columnElement).getPropertyValue('padding-right'))
-
-			React.Children.map<ReactElement | null | undefined, ReactElement | ReactNode>(children, child => cloneComponent(child, {
-				width: (column.offsetWidth - padding) + 'px',
-			}))
+		const dragCoordinates = {
+			x: data.x + data.node.getBoundingClientRect().left,
+			y: data.y + data.node.getBoundingClientRect().top,
 		}
+		draggableContext.setCoordinates(dragCoordinates)
+		setStartCoordinates(dragCoordinates)
+
+		const column: HTMLDivElement = draggableContext.columns.map(column => column.element)?.[0]
+		const columnElement: HTMLDivElement = column.querySelector('.scroll') ?? column
+		const padding = parseInt(window.getComputedStyle(columnElement).getPropertyValue('padding-right'))
+
+		React.Children.map<ReactElement | null | undefined, ReactElement | ReactNode>(children, child => cloneComponent(child, {
+			width: (column.offsetWidth - padding) + 'px',
+		}))
 	}
 
 	const dragHandler = (event: DraggableEvent, data: DraggableData) => {
@@ -120,7 +118,7 @@ export const Drag: React.FC<DragProps> = ({ children, onDragEnd, disabled, curre
 					onDrag={dragHandler}
 					onStop={stopHandler}
 					position={{ x: 0, y: 0 }}
-					disabled={window.innerWidth <= 1000 || disabled}
+					disabled={disabled}
 					defaultClassName={clsx({ dragging: isDragging })}
 				>
 					{children}
