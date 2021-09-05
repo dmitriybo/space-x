@@ -1,6 +1,7 @@
 # space-x
 
 Интерфейс для бронирования полетов, разработанный с использованием SpaceX Open API
+https://github.com/r-spacex/SpaceX-API
 
 Посмотреть можно здесь:
 https://dmitriybo-space-x.herokuapp.com/
