@@ -1,0 +1,75 @@
+@import "../../styles/vars";
+
+.launch-card {
+	border-radius: 7px;
+	background: #fff;
+	border: 1px solid $border;
+	user-select: none;
+	display: block;
+
+	a {
+		display: block;
+		padding: 15px;
+		user-drag: none;
+		-webkit-user-drag: none;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+
+	& + & {
+		margin-top: 10px;
+	}
+
+	.ant-card-body {
+		padding: 15px;
+	}
+
+	&__left {
+		margin-right: 18px;
+		padding-top: 3px;
+	}
+
+	h4 {
+		margin-bottom: 3px;
+	}
+
+	&__rocket {
+		color: $grayDark;
+		font-weight: 500;
+		margin-bottom: 5px;
+	}
+
+	&__date {
+		color: $grayText;
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+	&.clone-drag {
+		position: fixed;
+		z-index: 10000;
+		transition: box-shadow 400ms ease, transform 400ms ease;
+	}
+
+	&.clone-drag.rotate {
+		transform: rotate(2deg) !important;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+	}
+
+	&.react-draggable {
+		transform: translate(0px, 0px) !important;
+	}
+
+	&.dragging {
+		border: 1px dashed $stroke;
+		box-shadow: none;
+		background: rgba(0, 0, 0, 0.02);
+		transform: none !important;
+
+		* {
+			opacity: 0;
+		}
+	}
+}
