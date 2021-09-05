@@ -4,7 +4,8 @@
   "repository": "https://github.com/dmitriybo/space-x.git",
   "author": "dmitriybo <bogdanov.dmitriy@bk.ru>",
   "scripts": {
-    "start": "webpack serve --open --mode development",
+    "start": "node server.js",
+    "dev": "webpack serve --open --mode development",
     "build": "webpack --mode production"
   },
   "devDependencies": {
@@ -51,6 +52,7 @@
     "@reduxjs/toolkit": "^1.6.1",
     "antd": "^4.16.13",
     "clsx": "^1.1.1",
+    "express": "^4.17.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
