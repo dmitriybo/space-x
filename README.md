@@ -2,6 +2,9 @@
 
 Интерфейс для бронирования полетов, разработанный с использованием SpaceX Open API
 
+Посмотреть можно здесь:
+https://dmitriybo-space-x.herokuapp.com/
+
 **React, Redux, Redux Toolkit, React Draggable, Webpack, Lodash, Eslint, TypeScript, Ant Design**
 
 ## Функции интерфейса:
@@ -16,3 +19,7 @@
 ## Запуск приложения
 `yarn start`
 `npm start`
+
+Приложение запуститься на порту 8080
+
+http://localhost:8080/
