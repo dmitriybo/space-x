@@ -4,7 +4,7 @@
 https://github.com/r-spacex/SpaceX-API
 
 Посмотреть можно здесь:
-https://dmitriybo-space-x.herokuapp.com/
+https://dmitriybo.github.io/space-x/
 
 **React, Redux, Redux Toolkit, Redux Persist, React Draggable, Webpack, Lodash, Eslint, TypeScript, Ant Design**
 
