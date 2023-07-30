@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import clsx from 'clsx'
 import { Avatar, Col, Row, message, Modal } from 'antd'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
+import { baseUrl } from '../../env'
 import styles from './LaunchCard.module.scss'
 import { ILaunch, launchesActions, ScheduleColumnEnum } from '../../redux/slices/launchesSlice'
 import { DateClass } from '../../classes/dateClass'
@@ -71,7 +72,7 @@ export const LaunchCard: React.FC<LaunchCardProps> = ({ launch, column }) => {
 			onClick={() => router.push(`/launch/${launch.id}`)}
 		>
 			<div className={clsx(styles['launch-card'])}>
-				<Link to={`/launch/${launch.id}`}>
+				<Link to={`${baseUrl}launch/${launch.id}`}>
 					<Row>
 						<Col className={styles['launch-card__left']}>
 							<Avatar icon={<img src={launch.links.patch.small ?? launch.rocket.flickr_images?.[0]} alt=""/>}/>

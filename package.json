@@ -5,8 +5,8 @@
   "author": "dmitriybo <bogdanov.dmitriy@bk.ru>",
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack serve --open --mode development",
-    "build": "webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack serve --open --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
     "@typescript-eslint/parser": "^4.30.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.24.2",

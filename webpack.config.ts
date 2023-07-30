@@ -1,4 +1,5 @@
 import path from 'path'
+import { baseUrl } from './src/env'
 import { Configuration } from 'webpack'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -11,6 +12,7 @@ const config: Configuration = {
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js',
+		publicPath: baseUrl,
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
@@ -78,8 +80,8 @@ const config: Configuration = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin({
-			filename: './assets/css/[name].css',
-			chunkFilename: './assets/css/[name].css',
+			filename: 'assets/css/[name].css',
+			chunkFilename: 'assets/css/[name].css',
 		}),
 		new HtmlWebpackPlugin({
 			xhtml: true,
