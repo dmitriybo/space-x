@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory, useParams } from 'react-router-dom'
+import { baseUrl } from '../env'
 import { Title } from '../components/title'
 import { spacexApi } from '../api/spacexApi'
 import { Gallery } from '../components/gallery'
@@ -19,7 +20,7 @@ export const Launch: React.FC = () => {
 				status="404"
 				title="404"
 				subTitle="Такая страница не найдена"
-				extra={<Button type="primary" onClick={() => router.push('/')}>Вернуться на главную</Button>}
+				extra={<Button type="primary" onClick={() => router.push(baseUrl)}>Вернуться на главную</Button>}
 			/>
 		)
 	}
@@ -45,7 +46,7 @@ export const Launch: React.FC = () => {
 
 			{launch && (
 				<>
-					<Title title={launch.name} onBack={() => router.push('/')}/>
+					<Title title={launch.name} onBack={() => router.push(baseUrl)}/>
 					<Row>
 						<Col span={8}>
 							<Gallery photos={launch.rocket.flickr_images}/>
