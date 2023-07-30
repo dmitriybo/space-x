@@ -11,7 +11,6 @@ const config: Configuration = {
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js',
-		publicPath: '/',
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
